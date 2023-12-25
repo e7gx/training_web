@@ -1,4 +1,4 @@
-var color='hrllo';
+let color='hrllo';
 
 console.log(color);
 console.log(color);
