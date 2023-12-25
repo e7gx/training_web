@@ -21,5 +21,5 @@ console.log(result1);
 console.log(number);
 
 */
-let value;
-console.log(typeof value);
+let value = null;
+console.log( value);
