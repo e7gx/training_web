@@ -29,13 +29,15 @@ const setSuccess = (element) => {
   inputControl.classList.add("success");
   inputControl.classList.remove("error");
 };
-
+//! التحقق من الايميل و صحته من ناحية النصوص والعلامات 
 const isValidEmail = (email) => {
   const re =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 };
 
+
+//! التعامل مع النصوص بالشروط طبعا ميثود كامله خاصة بهذه الخاصية
 const validateInputs = () => {
   const usernameValue = username.value.trim();
   const emailValue = email.value.trim();
