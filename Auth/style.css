@@ -2,8 +2,14 @@ body {
     font-family: 'Times New Roman', Times, serif, sans-serif;
     background: rgb(255, 222, 233);
     background: linear-gradient(90deg, rgba(255, 222, 233, 1) 0%, rgba(181, 255, 252, 1) 100%);
+    font-size: large;
+    text-align: center;
+    color: rgb(54, 68, 142);
 
 }
+
+
+
 
 form {
     width: 300px;
