@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Roboto+Condensed:ital,wght@0,700;1,400&display=swap');
+
+html {
+
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+body {
+    margin: 0;
+    background-color: #1d1f21;
+    font-size: large;
+    text-align: center;
+    color: #ffffff;
+
+}
+
+
+form {
+    width: 300px;
+    margin: 20vh auto 0 auto;
+    padding: 55px;
+    background: rgb(255, 222, 233);
+    background: linear-gradient(90deg, rgba(255, 222, 233, 1) 0%, rgba(181, 255, 252, 1) 100%);
+    border-radius: 4px;
+    font-size: 12px;
+    text-align: right;
+
+
+}
+
+select {
+    font-size: large;
+}
+
+#form h1 {
+    color: rgb(252, 165, 165);
+    text-align: center;
+
+}
+
+
+#form button {
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: white;
+    background-image: linear-gradient(to right, #efafcc 0%, #89fffd 51%, #ffbed3 100%);
+    margin: 10px;
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    font-weight: bold;
+    font-size: auto;
+    text-align: center;
+}
+
+#form button:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.input-control,select {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-control input,select {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+
+    font-size: 12px;
+    padding: 10px;
+    width: 100%;
+}
+
+.input-control input:focus,select {
+    outline: 0;
+
+}
+
+.input-control.success input {
+    border-color: rgb(54, 246, 131);
+}
+
+.input-control.error input {
+
+    border-color: red;
+}
+
+.input-control .error {
+
+    color: red;
+    font-size: 9px;
+    height: 13px;
+}
