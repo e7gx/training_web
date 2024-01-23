@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up page by Abdullah </title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="/Lab/numberOne/script.js"></script>
+    <script defer src="Zip.js"></script>
+
+</head>
+<br>
+
+<body>
+    <h1>أهلا فيك في الصفحة اكمل البيانات التالية </h1>
+    <div class="container">
+
+        <form id="form" action="/">
+
+            <h1>تسجيل حساب جديد</h1>
+
+            <div class="input-control">
+                <label for="username" style="color:rgb(2, 204, 255);">USERNAME</label>
+                <input id="username" name="اسم المستخدم" type="text" required>
+                <div class="error"></div>
+            </div>
+
+            <div class="input-control">
+                <label for="email" style="color:rgb(2, 204, 255);"> EMAIL</label>
+                <input id="email" name="ايميل" type="text" required>
+                <div class="error"></div>
+            </div>
+
+
+
+            <div class="input-control">
+                <label for="Zip" style="color:rgb(2, 204, 255);">Zip Code:</label>
+                <input type="text" name="Zip" required />
+                <div class="error"></div>
+            </div>
+
+            <div><select name="select" class="input-control" id="select" style="color:rgb(2, 204, 255); ">
+                    <option value="-1" selected>[choose yours]</option>
+                    <option value="1">KSA</option>
+                    <option value="2">OMAN</option>
+                    <option value="3">UK</option>
+                </select> <br> <br></div>
+
+            <button type="submit">تسجيل الحساب</button>
+        </form>
+    </div>
+</body>
+
+</html>

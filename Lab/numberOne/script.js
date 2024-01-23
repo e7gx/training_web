@@ -2,8 +2,6 @@
 const form = document.getElementById("form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
-// const select = document.getElementById("select");
-// const Zip = document.getElementById("Zip");
 
 //! الزر اذا ضغط يشيك على اليثودز وملحقاتها ليتاكد من صحت النص المقدم وايضا ان الحقول ممتلئه
 form.addEventListener("submit", (e) => {
@@ -40,8 +38,7 @@ const isValidEmail = (email) => {
 const validateInputs = () => {
   const usernameValue = username.value.trim();
   const emailValue = email.value.trim();
-//   const selectValue = select.value.trim();
-//   const Zip2Value = Zip.value.trim();
+
 
   if (usernameValue === "") {
     setError(username, "اسم المستخدم حقل  مطلوب");
@@ -56,20 +53,4 @@ const validateInputs = () => {
   } else {
     setSuccess(email);
   }
-
-//   if (selectValue === "") {
-//     setError(select, "كامة السر حقل الزامي");
-//   } else if (select.length < 5) {
-//     setError(select, "ضع رمز مكون من خمسة خانات");
-//   } else {
-//     setSuccess(select);
-//   }
-
-//   if (Zip2Value === " ") {
-//     setError(Zip, "قم بتاكيد كلمة المرور ");
-//   } else if (Zip2Value !== passwordValue) {
-//     setError(Zip, "كلمة المرور لاتطابق ماسبق");
-//   } else {
-//     setSuccess(password2);
-//   }
 };
