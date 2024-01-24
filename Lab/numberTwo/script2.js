@@ -1,75 +1,30 @@
-// //! تعريف متغيرات الحقول الي موجود عندي في ملف ال html
-// const form = document.getElementById("form");
-// const username = document.getElementById("username");
-// const email = document.getElementById("email");
-// // const select = document.getElementById("select");
-// // const Zip = document.getElementById("Zip");
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('form');
+    const phoneInput = document.getElementById('username');
+    const countrySelect = document.getElementById('select');
 
-// //! الزر اذا ضغط يشيك على اليثودز وملحقاتها ليتاكد من صحت النص المقدم وايضا ان الحقول ممتلئه
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   validateInputs();
-// });
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting until we've done our validation
 
-// //! ميثود خاصة برفض الحقل
-// const setError = (element, message) => {
-//   const inputControl = element.parentElement;
-//   const errorDisplay = inputControl.querySelector(".error");
+        const phone = phoneInput.value;
+        const country = countrySelect.options[countrySelect.selectedIndex].text;
 
-//   errorDisplay.innerText = message;
-//   inputControl.classList.add("error");
-//   inputControl.classList.remove("success");
-// };
-// //!ميثود الخاصة بقبول الحقل
-// const setSuccess = (element) => {
-//   const inputControl = element.parentElement;
-//   const errorDisplay = inputControl.querySelector(".error");
+        let phoneRegex;
+        if (country === 'KSA') {
+            // KSA phone numbers should start with 05 followed by 8 digits
+            phoneRegex = /^05\d{8}$/;
+        } else {
+            // Other countries should start with +966 or 00966 followed by 8 to 11 digits
+            phoneRegex = /^(\+966|00966)[\s-]?\d{8,11}$/;
+        }
 
-//   errorDisplay.innerText = "";
-//   inputControl.classList.add("success");
-//   inputControl.classList.remove("error");
-// };
-// //! التحقق من الايميل و صحته من ناحية النصوص والعلامات
-// const isValidEmail = (email) => {
-//   const re =
-//     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//   return re.test(String(email).toLowerCase());
-// };
+        const isValid = phoneRegex.test(phone);
+        if (!isValid) {
+            alert('Please enter a valid phone number for the selected country.');
+            return false; // Stop the form submission
+        }
 
-// //! التعامل مع النصوص بالشروط طبعا ميثود كامله خاصة بهذه الخاصية
-// const validateInputs = () => {
-//   const usernameValue = username.value.trim();
-//   const emailValue = email.value.trim();
-// //   const selectValue = select.value.trim();
-// //   const Zip2Value = Zip.value.trim();
-
-//   if (usernameValue === "") {
-//     setError(username, "اسم المستخدم حقل  مطلوب");
-//   } else {
-//     setSuccess(username);
-//   }
-
-//   if (emailValue === "") {
-//     setError(email, "");
-//   } else if (!isValidEmail(emailValue)) {
-//     setError(email, "ادخل حساب ايميل صحيح");
-//   } else {
-//     setSuccess(email);
-//   }
-
-// //   if (selectValue === "") {
-// //     setError(select, "كامة السر حقل الزامي");
-// //   } else if (select.length < 5) {
-// //     setError(select, "ضع رمز مكون من خمسة خانات");
-// //   } else {
-// //     setSuccess(select);
-// //   }
-
-// //   if (Zip2Value === " ") {
-// //     setError(Zip, "قم بتاكيد كلمة المرور ");
-// //   } else if (Zip2Value !== passwordValue) {
-// //     setError(Zip, "كلمة المرور لاتطابق ماسبق");
-// //   } else {
-// //     setSuccess(password2);
-// //   }
-// };
+        // If the number is valid, you might want to continue with the form submission
+        // form.submit(); // Uncomment this to allow the form to submit
+    });
+});

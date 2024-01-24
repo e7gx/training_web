@@ -1,11 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Roboto+Condensed:ital,wght@0,700;1,400&display=swap');
 
-html {
-
-    font-family: 'Cairo', sans-serif;
-    font-family: 'Roboto Condensed', sans-serif;
-
-}
 
 body {
     margin: 0;
@@ -14,6 +7,11 @@ body {
     text-align: center;
     color: #ffffff;
 
+}
+small{
+    font-size: 14px;
+    color: #78c195;
+    text-align: center;
 }
 
 
@@ -34,7 +32,7 @@ select {
     font-size: large;
 }
 
-#form h1 {
+#form h1  {
     color: rgb(252, 165, 165);
     text-align: center;
 
@@ -101,4 +99,8 @@ select {
     color: red;
     font-size: 9px;
     height: 13px;
+}
+
+input::placeholder{
+    color: #c7ccd0;
 }
