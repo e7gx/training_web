@@ -7,24 +7,35 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault(); // Prevent the form from submitting until we've done our validation
 
         const phone = phoneInput.value;
-        const country = countrySelect.options[countrySelect.selectedIndex].text;
+        const country = countrySelect.value; // Use value to get the option value
 
         let phoneRegex;
-        if (country === 'KSA') {
-            // KSA phone numbers should start with 05 followed by 8 digits
-            phoneRegex = /^05\d{8}$/;
-        } else {
-            // Other countries should start with +966 or 00966 followed by 8 to 11 digits
-            phoneRegex = /^(\+966|00966)[\s-]?\d{8,11}$/;
+        switch (country) {
+            case 'KSA':
+                phoneRegex = /^05\d{8}$/;
+                break;
+            case 'OMAN':
+                phoneRegex = /^(\+968)[\s-]?\d{8,11}$/;
+                break;
+            case 'UK':
+                phoneRegex = /^(\+44)[\s-]?\d{8,12}$/;
+                break;
+            default:
+                // Handle the case where no country is selected or a country without a specific regex
+                alert('Please select a country and enter a valid phone number.');
+                return false;
         }
 
-        const isValid = phoneRegex.test(phone);
-        if (!isValid) {
+        // Now check the validity only if phoneRegex has been defined
+        if (phoneRegex && !phoneRegex.test(phone)) {
             alert('Please enter a valid phone number for the selected country.');
             return false; // Stop the form submission
+        } else{
+            alert('welcome this is a valid Number !!!!!!')
         }
 
-        // If the number is valid, you might want to continue with the form submission
-        // form.submit(); // Uncomment this to allow the form to submit
+        // Here, you could proceed with form submission, for example using an AJAX call
+        // or by uncommenting the following line to allow the form to submit normally.
+        // form.submit();
     });
 });
